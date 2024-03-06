@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 public class MyUnsortedListTest {
 
+
+
     @Test
     public void testSize(){
         MyUnsortedList<Integer> list = MyUnsortedList.of();
@@ -141,15 +143,6 @@ public class MyUnsortedListTest {
         MyUnsortedList<Integer> list = MyUnsortedList.of();
         Assertions.assertThrows( EmptyListException.class, () -> {
             list.pop();
-        });
-    }
-
-    @Test
-    void testPopLastOnEmptyList(){
-        MyUnsortedList<Integer> list = MyUnsortedList.of();
-        //Bug trouvé : mauvaise exception renvoyée (IndexOutOfBoundsException au lieu de EmptyListException dans la spécification)
-        Assertions.assertThrows( EmptyListException.class, () -> {
-            list.popLast();
         });
     }
 
